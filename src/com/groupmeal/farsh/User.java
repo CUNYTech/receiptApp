@@ -12,6 +12,18 @@ public class User {
 	private byte state;
 	private boolean valid;
 
+	User(long inID, String inEmail, String inPassHash, String inSalt, String inFirst, String inLast, String inPhone, long inCreated, byte inState){
+	    id=inID;
+	    email=inEmail;
+	    passHash = inPassHash;
+	    salt = inSalt;
+	    firstName = inFirst;
+	    lastName = inLast;
+	    phone = inPhone;
+	    created = inCreated;
+	    state = inState;
+	    valid = true;
+	}
 	public long getId() {
 		return id;
 	}

@@ -6,6 +6,11 @@ public class Item {
 	private int amount;
 	private boolean valid;
 	
+	Item(float inPrice, String inName, int inAmount ){
+		price = inPrice;
+		itemName = inName;
+		amount = inAmount;
+	}
 	public float getPrice() {
 		return price;
 	}

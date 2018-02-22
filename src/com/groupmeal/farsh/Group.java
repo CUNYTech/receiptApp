@@ -7,6 +7,14 @@ public class Group {
 	private byte state;
 	private boolean valid;
 	
+	Group(String inID, int inUser, long inCreated, byte inState){
+		id = inID;
+		users = inUser;
+		created = inCreated;
+		state = inState;
+		valid = true;
+		
+	}
 	public String getId() {
 		return id;
 	}
