@@ -7,10 +7,12 @@ public class Main
 	public static void main(String[] args)
 	{
 		Vector<User> customer = new Vector<User>();
-		String first, last, phone, email;
+		Vector<Item> items = new Vector<Item>();
+		String first, last, phone, email, nameItem;
 		long id;
-		int numPpl;
+		int numPpl, numItems, price, quantity;
 		User users;
+		Item item;
 		
 		System.out.print("Enter number of people: ");
 		Scanner scan = new Scanner(System.in);
@@ -32,5 +34,22 @@ public class Main
 		    customer.add(users);
 		    
 		}
+		
+		System.out.print("Enter the number of items: ");
+		numItems = scan.nextInt();
+		
+		for(int i = 1; i <= numItems; i++){
+			System.out.print("Enter the name of Item " + i + ": ");
+			nameItem = scan.next();
+			
+			System.out.print("Enter the price: ");
+			price = scan.nextInt();
+			
+			System.out.print("Enter the quantity: ");
+			quantity = scan.nextInt();
+			item = new Item(price, nameItem, quantity);
+			items.add(item);
+		
 		}
+	}
 }
