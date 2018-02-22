@@ -51,5 +51,6 @@ public class Main
 			items.add(item);
 		
 		}
+		scan.close();
 	}
 }
