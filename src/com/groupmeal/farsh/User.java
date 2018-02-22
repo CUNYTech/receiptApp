@@ -15,35 +15,40 @@ public class User {
 	public long getId() {
 		return id;
 	}
+	
 	public String getEmail() {
 		return email;
 	}
+	
 	public String getPassHash() {
 		return passHash;
 	}
+	
 	public String getSalt() {
 		return salt;
 	}
+	
 	public String getFirstName() {
 		return firstName;
 	}
+	
 	public String getLastName() {
 		return lastName;
 	}
+	
 	public String getPhone() {
 		return phone;
 	}
+	
 	public long getCreated() {
 		return created;
 	}
+	
 	public byte getState() {
 		return state;
 	}
+	
 	public boolean isValid() {
 		return valid;
 	}
-    
-    
-    
-
 }
