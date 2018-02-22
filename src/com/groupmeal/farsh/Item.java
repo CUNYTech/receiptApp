@@ -3,13 +3,13 @@ package com.groupmeal.farsh;
 public class Item {
     private float price;
 	private String itemName;
-	private int amount;
+	private int quantity;
 	private boolean valid;
 	
 	Item(float inPrice, String inName, int inAmount ){
 		price = inPrice;
 		itemName = inName;
-		amount = inAmount;
+		quantity = inAmount;
 	}
 	public float getPrice() {
 		return price;
@@ -19,8 +19,8 @@ public class Item {
 		return itemName;
 	}
 	
-	public int getAmount() {
-		return amount;
+	public int getQuantity() {
+		return quantity;
 	}
 	
 	public boolean isValid() {
