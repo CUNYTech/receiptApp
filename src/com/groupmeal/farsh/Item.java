@@ -21,6 +21,4 @@ public class Item {
 	public boolean isValid() {
 		return valid;
 	}
-	
-	
 }

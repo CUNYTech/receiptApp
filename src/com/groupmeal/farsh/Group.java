@@ -2,11 +2,11 @@ package com.groupmeal.farsh;
 
 public class Group {
 	private String id;
-    private int users;
-    private long created;
-    private byte state;
-    private boolean valid;
-    
+	private int users;
+	private long created;
+	private byte state;
+	private boolean valid;
+	
 	public String getId() {
 		return id;
 	}
@@ -26,6 +26,4 @@ public class Group {
 	public boolean isValid() {
 		return valid;
 	}
-    
-
 }
