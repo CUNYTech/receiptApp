@@ -2,9 +2,9 @@
 	This is our Android App!
 
 ### Members
-Frank
-Ahmed
-Ryan
-Serge
-Hashim
-Qiman
+Frank  
+Ahmed  
+Ryan  
+Serge  
+Hashim  
+Qiman  
