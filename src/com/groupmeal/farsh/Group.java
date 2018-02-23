@@ -1,8 +1,17 @@
 package com.groupmeal.farsh;
 
 public class Group {
+	/**
+	 * This is a comment!
+	 */
 	private String id;
+	/**
+	 * This is another comment!
+	 */
 	private int users;
+	/**
+	 * This is also a comment!
+	 */
 	private long created;
 	private byte state;
 	private boolean valid;
