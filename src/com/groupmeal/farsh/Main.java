@@ -1,4 +1,5 @@
 package com.groupmeal.farsh;
+
 import java.util.*;
 import java.util.Scanner;
 
@@ -30,7 +31,7 @@ public class Main
 		    phone = scan.next();
 			System.out.print("Enter your email\n");
 		    email = scan.next();
-		    users = new User(id, email, "PassHash", "Salt", first, last, phone, 11111, (byte) 0);
+		    users = new User(id, email, first, last, phone, 11111, (byte) 0);
 		    customer.add(users);
 		    
 		}
