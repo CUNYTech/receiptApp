@@ -5,6 +5,21 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
+		/*
+		 * Can Frank and Ryan do me a favor and
+		 * instead of using the Vector<> class,
+		 * use the ArrayList<> class. It's pretty
+		 * much the same thing, just easier to
+		 * implement into the Android program.
+		 * 
+		 * It's your choice, if you guys want to
+		 * do that, it'd be cool. But not
+		 * necessary.
+		 * 
+		 * COMMENT ALL THE CODE, JUST LIKE I'VE
+		 * DONE IT FOR THE CLASSES, EXPLAIN WHAT
+		 * EACH LINE DOES
+		 */
 		Vector<User> customer = new Vector<User>();
 		Vector<Item> items = new Vector<Item>();
 		String first, last, phone, email, nameItem;
