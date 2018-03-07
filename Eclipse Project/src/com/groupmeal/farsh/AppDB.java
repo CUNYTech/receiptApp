@@ -1,26 +1,13 @@
 package com.groupmeal.farsh;
 
-import java.util.Map;
-
 public class AppDB {
-	private User currentUser;
-	
-	public User createAccount(String fn, String ln, String em, String ps){
-		return currentUser;
-	}
-	public Result loginTo(String em, String ps){
-		
-	}
-	private JsonObject call(Map<String, String> map){
-		
-	}
-	private String read(Map<String, String> map){
-		
-	}
-	private Map<String, String> mp(String strs){
-		
-	}
-	private String toQuery(Map<String, String> map){
-		
-	}
+	/*
+	 * UNUSED FILE AS OF NOW
+	 * 
+	 * Upon merging with the android application, this class will be populated
+	 * with methods and fields to allow us to access the database and retrieve
+	 * any information we want all from one file. Which Hashim Kayani, and
+	 * possibly Qiman Wang will work on. He/they will conduct the bridge between
+	 * the two programs.
+	 */
 }
