@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.next.groupmeal.MenuPage"
+    tools:showIn="@layout/activity_menu_page">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:padding="25dp"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:background="@color/menubackgrouncolor">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/backToHome"
+            android:background="@drawable/ic_arrow_back_black_24dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/user"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="25dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/skyblue"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/setting"
+            android:textColor="@color/skyblue"
+            android:layout_marginBottom="7dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/skyblue"/>
+
+        <TextView
+            android:textSize="18sp"
+            android:textColor="@color/skyblue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/group"
+            android:id="@+id/createGroupTextView"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/skyblue"/>
+
+        <TextView
+            android:textSize="18sp"
+            android:textColor="@color/skyblue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/feedback"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/skyblue"/>
+
+        <TextView
+            android:textSize="18sp"
+            android:textColor="@color/skyblue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/aboutus"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/skyblue"/>
+
+        <TextView
+            android:textSize="18sp"
+            android:textColor="@color/skyblue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/help"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/skyblue"/>
+
+        <TextView
+            android:textSize="18sp"
+            android:id="@+id/logoutTextView"
+            android:textColor="@color/skyblue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/logout"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/skyblue"/>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

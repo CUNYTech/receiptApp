@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">GroupMeal</string>
+    <string name="email">Email:</string>
+    <string name="password">Password:</string>
+    <string name="resetpassword">Reset Password</string>
+    <string name="login">Login</string>
+    <string name="donthaveaccount">Dont\'t have an account? Sign Up </string>
+    <string name="signup">Sign Up</string>
+    <string name="haveaccount">Have an Account? Log In</string>
+    <string name="profile">Profile</string>
+    <string name="orsignupwith">Or Sign Up with</string>
+    <string name="welcome">Welcome</string>
+    <string name="title_activity_menu_page">MenuPage</string>
+    <string name="setting">Setting</string>
+    <string name="group">Create Group</string>
+    <string name="feedback">Feedback</string>
+    <string name="aboutus">About Us</string>
+    <string name="help">Help</string>
+    <string name="logout">Log Out</string>
+    <string name="backtohome">Back</string>
+    <string name="keeplogin">Reminber me</string>
+    <string name="namegroup">Name of the group</string>
+    <string name="next">Next Step</string>
+    <string name="addmember">+Add Member</string>
+    <string name="continuebtn">Continue</string>
+
+</resources>

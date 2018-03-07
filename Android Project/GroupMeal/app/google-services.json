@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "574966114133",
+    "firebase_url": "https://groupmeal-12583.firebaseio.com",
+    "project_id": "groupmeal-12583",
+    "storage_bucket": "groupmeal-12583.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574966114133:android:a9606a2d763ec79b",
+        "android_client_info": {
+          "package_name": "com.next.groupmeal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574966114133-o96lvu58225dlo5b21v17hjnl10hknva.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.next.groupmeal",
+            "certificate_hash": "1ae25373f98be322cf2942f07ffc2fb229e66f0e"
+          }
+        },
+        {
+          "client_id": "574966114133-skgdcppabd4oou4p47s690b4aaq6pi7v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdKv6BaOmNJ_XiH3abzp3GWGqMkta0UhM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574966114133-skgdcppabd4oou4p47s690b4aaq6pi7v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

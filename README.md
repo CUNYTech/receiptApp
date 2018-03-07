@@ -1,5 +1,5 @@
 # Group Meal 
-	This is our Android App!
+This is our Android App!
 
 ### Members
 Frank  
