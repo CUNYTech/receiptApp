@@ -2,9 +2,9 @@
 This is our Android App!
 
 ### Members
-Frank  
-Ahmed  
-Ryan  
-Serge  
-Hashim  
-Qiman
+Frank Orefice  
+Ahmed Fathalla  
+Ryan Chen  
+Dontsa Serge  
+Hashim Kayani  
+Qiman Wang
