@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "574966114133-kptglmko3mcht1dtrir51u8r9a4ioom9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.next.groupmeal",
+            "certificate_hash": "208167e6952c0137bb8867c3e7088d865b6ec6e6"
+          }
+        },
+        {
           "client_id": "574966114133-o96lvu58225dlo5b21v17hjnl10hknva.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
