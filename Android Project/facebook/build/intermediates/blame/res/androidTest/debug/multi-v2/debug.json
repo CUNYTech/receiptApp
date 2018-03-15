@@ -1,0 +1,125 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-he_values-he.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\values-he\\values-he.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,121,198,290,405,500,556,625,705,777,849,929,1027,1106,1164,1233,1321,1410,1507,1644,1816,1954,2082,2255,2338,2416",
+                        "endColumns": "65,76,91,114,94,55,68,79,71,71,79,97,78,57,68,87,88,96,136,171,137,127,172,82,77,84",
+                        "endOffsets": "116,193,285,400,495,551,620,700,772,844,924,1022,1101,1159,1228,1316,1405,1502,1639,1811,1949,2077,2250,2333,2411,2496"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-hdpi-v4_values-hdpi-v4.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "63",
+                        "endOffsets": "114"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,107,116",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,107,184,259,328,395,463,539,609,700,789,2990,3064,3137,3210,3282,3355,3428,3508,3577,3644,3712,3778,3845,3910,3979,4044,4124,4193,4261,4329,4395,4461,4529,4611,4694,4775,4846,4934,5021,5107,5178,5252,5367,5485,5580,5645,5713,5773,5845,5931,6005,6079,6162,6263,6343,6398,6468,6556,6648,6748,6922,7088,7219,7348,7491,7620,7704,7786,7876,8555,9052",
+                        "endLines": "2,3,4,5,6,7,8,9,10,11,12,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,106,115,123",
+                        "endColumns": "51,76,74,68,66,67,75,69,90,88,92,73,72,72,71,72,72,79,68,66,67,65,66,64,68,64,79,68,67,67,65,65,67,81,82,80,70,87,86,85,70,73,114,117,94,64,67,59,71,85,73,73,82,100,79,54,69,87,91,99,173,165,130,128,142,128,83,81,89,12,12,12",
+                        "endOffsets": "102,179,254,323,390,458,534,604,695,784,877,3059,3132,3205,3277,3350,3423,3503,3572,3639,3707,3773,3840,3905,3974,4039,4119,4188,4256,4324,4390,4456,4524,4606,4689,4770,4841,4929,5016,5102,5173,5247,5362,5480,5575,5640,5708,5768,5840,5926,6000,6074,6157,6258,6338,6393,6463,6551,6643,6743,6917,7083,7214,7343,7486,7615,7699,7781,7871,8550,9047,9407"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-iw_values-iw.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\values-iw\\values-iw.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,121,198,290,405,500,556,625,705,777,849,929,1027,1106,1164,1233,1321,1410,1507,1644,1816,1954,2082,2255,2338,2416",
+                        "endColumns": "65,76,91,114,94,55,68,79,71,71,79,97,78,57,68,87,88,96,136,171,137,127,172,82,77,84",
+                        "endOffsets": "116,193,285,400,495,551,620,700,772,844,924,1022,1101,1159,1228,1316,1405,1502,1639,1811,1949,2077,2250,2333,2411,2496"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-ldpi-v4_values-ldpi-v4.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\values-ldpi-v4\\values-ldpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "63",
+                        "endOffsets": "114"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-xhdpi-v4_values-xhdpi-v4.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\values-xhdpi-v4\\values-xhdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "63",
+                        "endOffsets": "114"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-mdpi-v4_values-mdpi-v4.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\values-mdpi-v4\\values-mdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "63",
+                        "endOffsets": "114"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-es_values-es.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,124,203,303,429,527,585,659,752,832,912,1003,1108,1191,1247,1320,1408,1506,1615,1781,2002,2168,2323,2536,2628,2716",
+                        "endColumns": "68,78,99,125,97,57,73,92,79,79,90,104,82,55,72,87,97,108,165,220,165,154,212,91,87,98",
+                        "endOffsets": "119,198,298,424,522,580,654,747,827,907,998,1103,1186,1242,1315,1403,1501,1610,1776,1997,2163,2318,2531,2623,2711,2810"
+                    }
+                }
+            ]
+        }
+    ]
+}

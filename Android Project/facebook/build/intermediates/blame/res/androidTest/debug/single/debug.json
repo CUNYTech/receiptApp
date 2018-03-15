@@ -1,0 +1,474 @@
+[
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_button_check_on.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_button_check_on.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_com_facebook_tooltip_blue_xout.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_tooltip_blue_xout.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_usersettingsfragment_background_gradient.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_usersettingsfragment_background_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_com_facebook_button_blue_focused.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_button_blue_focused.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_com_facebook_logo.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\com_facebook_logo.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_com_facebook_button_grey_focused.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\com_facebook_button_grey_focused.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_com_facebook_button_blue_pressed.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\com_facebook_button_blue_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_com_facebook_tooltip_black_topnub.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\com_facebook_tooltip_black_topnub.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_com_facebook_picker_magnifier.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\com_facebook_picker_magnifier.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_com_facebook_tooltip_blue_bottomnub.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_tooltip_blue_bottomnub.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_com_facebook_picker_magnifier.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\com_facebook_picker_magnifier.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_com_facebook_tooltip_blue_xout.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\com_facebook_tooltip_blue_xout.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_com_facebook_button_like_background_selected.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\com_facebook_button_like_background_selected.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_com_facebook_tooltip_blue_background.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_tooltip_blue_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_picker_list_selector_background_transition.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_picker_list_selector_background_transition.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_picker_top_button.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_picker_top_button.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_com_facebook_picker_image.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_image.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_com_facebook_button_grey_normal.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_button_grey_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_picker_list_focused.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_picker_list_focused.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_button_check.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_button_check.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_com_facebook_tooltip_black_background.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_tooltip_black_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_com_facebook_button_like_icon.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\com_facebook_button_like_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_com_facebook_tooltip_black_xout.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\com_facebook_tooltip_black_xout.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_profile_picture_blank_square.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_profile_picture_blank_square.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_button_grey_pressed.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_button_grey_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_button_like_pressed.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_button_like_pressed.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_com_facebook_close.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\com_facebook_close.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_com_facebook_tooltip_blue_background.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\com_facebook_tooltip_blue_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_com_facebook_inverse_icon.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_inverse_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_profile_picture_blank_portrait.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_profile_picture_blank_portrait.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_com_facebook_button_like_background_selected.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_button_like_background_selected.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_close.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_close.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_picker_list_selector.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_picker_list_selector.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_com_facebook_picker_list_row.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_list_row.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_com_facebook_tooltip_bubble.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_tooltip_bubble.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_button_like_icon.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_button_like_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_com_facebook_picker_magnifier.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_picker_magnifier.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_top_button.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_top_button.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_com_facebook_tooltip_black_background.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\com_facebook_tooltip_black_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_place_default_icon.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_place_default_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_button_like_background_selected.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_button_like_background_selected.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_button_like_background.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_button_like_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_com_facebook_picker_activity_circle_row.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_activity_circle_row.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_com_facebook_button_like_icon_selected.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\com_facebook_button_like_icon_selected.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_com_facebook_button_blue_normal.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\com_facebook_button_blue_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_com_facebook_close.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_close.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_profile_default_icon.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_profile_default_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_com_facebook_button_grey_focused.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_button_grey_focused.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_com_facebook_button_like_pressed.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\com_facebook_button_like_pressed.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_com_facebook_friendpickerfragment.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_friendpickerfragment.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_com_facebook_tooltip_black_bottomnub.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\com_facebook_tooltip_black_bottomnub.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_com_facebook_login_activity_layout.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_login_activity_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_com_facebook_tooltip_black_topnub.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\com_facebook_tooltip_black_topnub.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_com_facebook_inverse_icon.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\com_facebook_inverse_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_com_facebook_inverse_icon.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\com_facebook_inverse_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_com_facebook_logo.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_logo.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_com_facebook_button_grey_pressed.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\com_facebook_button_grey_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_com_facebook_button_like_icon_selected.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\com_facebook_button_like_icon_selected.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_com_facebook_button_like_background_selected.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\com_facebook_button_like_background_selected.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_button_blue_normal.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_button_blue_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_loginbutton_silver.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_loginbutton_silver.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_com_facebook_button_like_icon.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_button_like_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_list_section_header_background.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_list_section_header_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_top_background.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_top_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_com_facebook_tooltip_black_xout.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\com_facebook_tooltip_black_xout.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_button_like_selected.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_button_like_selected.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_com_facebook_button_grey_normal.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\com_facebook_button_grey_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-ldpi-v4_com_facebook_close.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-ldpi-v4\\com_facebook_close.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_com_facebook_button_blue_focused.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\com_facebook_button_blue_focused.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_com_facebook_tooltip_blue_topnub.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\com_facebook_tooltip_blue_topnub.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_com_facebook_button_like_pressed.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\com_facebook_button_like_pressed.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_com_facebook_tooltip_blue_bottomnub.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\com_facebook_tooltip_blue_bottomnub.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_com_facebook_tooltip_black_topnub.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_tooltip_black_topnub.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_com_facebook_button_blue_pressed.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_button_blue_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_com_facebook_button_like_icon_selected.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_button_like_icon_selected.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_com_facebook_tooltip_black_bottomnub.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\com_facebook_tooltip_black_bottomnub.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_com_facebook_picker_search_box.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_search_box.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_com_facebook_tooltip_black_background.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\com_facebook_tooltip_black_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_com_facebook_placepickerfragment_list_row.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_placepickerfragment_list_row.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_com_facebook_picker_title_bar.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_title_bar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_com_facebook_button_blue_pressed.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\com_facebook_button_blue_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_com_facebook_tooltip_blue_xout.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\com_facebook_tooltip_blue_xout.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_com_facebook_button_like_icon.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\com_facebook_button_like_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_button_blue_focused.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_button_blue_focused.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_button_check_off.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_button_check_off.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_com_facebook_tooltip_blue_topnub.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_tooltip_blue_topnub.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_picker_item_background.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_picker_item_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_com_facebook_search_bar_layout.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_search_bar_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_button_like.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_button_like.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_com_facebook_tooltip_blue_bottomnub.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\com_facebook_tooltip_blue_bottomnub.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_com_facebook_picker_list_section_header.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_list_section_header.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_com_facebook_button_blue_normal.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_button_blue_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_com_facebook_tooltip_blue_topnub.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\com_facebook_tooltip_blue_topnub.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_com_facebook_button_like_background.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\com_facebook_button_like_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_inverse_icon.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_inverse_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_com_facebook_picker_title_bar_stub.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_title_bar_stub.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_picker_list_longpressed.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_picker_list_longpressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_button_grey_normal.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_button_grey_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_list_divider.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_list_divider.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_com_facebook_button_like_background.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\com_facebook_button_like_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_com_facebook_button_blue_normal.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\com_facebook_button_blue_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_com_facebook_tooltip_black_xout.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_tooltip_black_xout.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_com_facebook_button_like_pressed.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_button_like_pressed.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_com_facebook_tooltip_blue_background.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\com_facebook_tooltip_blue_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_com_facebook_button_like_background.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_button_like_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_com_facebook_button_grey_pressed.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_button_grey_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_button_grey_focused.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_button_grey_focused.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_com_facebook_placepickerfragment.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_placepickerfragment.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_com_facebook_usersettingsfragment.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_usersettingsfragment.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_com_facebook_button_blue_focused.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\com_facebook_button_blue_focused.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_com_facebook_picker_checkbox.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_checkbox.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_com_facebook_tooltip_black_bottomnub.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_tooltip_black_bottomnub.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_logo.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_logo.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_button_like_icon_selected.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_button_like_icon_selected.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_button_blue.xml.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_button_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_picker_list_selector_disabled.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_picker_list_selector_disabled.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_button_blue_pressed.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_button_blue_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_com_facebook_picker_list_pressed.9.png.flat",
+        "source": "C:\\Users\\Ahmed\\Desktop\\GroupMeal\\GroupMeal\\facebook\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_picker_list_pressed.9.png"
+    }
+]
