@@ -27,7 +27,7 @@ public class signup extends AppCompatActivity {
     private Button mSignupButton;
     FirebaseAuth mAuth;
     private TextView ErrorTextView;
-
+    private PermissionManager permissionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +60,12 @@ public class signup extends AppCompatActivity {
             }
         });
 
+        permissionManager = new PermissionManager(this);
+
+        if (!permissionManager.hasReadContactPermission())
+        {
+            permissionManager.tryAskingPermission();
+        }
     }
 
     private void SignUpUserWithEmailAndPassword()
@@ -134,4 +140,12 @@ public class signup extends AppCompatActivity {
         return password.length() >= 6;
     }
 
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
+    {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        permissionManager.onRequestPermissionResult(requestCode, permissions, grantResults);
+    }
 }
