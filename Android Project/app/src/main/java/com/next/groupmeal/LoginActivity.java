@@ -32,6 +32,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     Button loginButton;
     private TextView ErrorTextView;
     private TextView loginTextView;
+    private PermissionManager permissionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +74,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
 
 
+        permissionManager = new PermissionManager(this);
 
+        if (!permissionManager.hasReadContactPermission())
+        {
+            permissionManager.tryAskingPermission();
+        }
     }
 
     private void LoginUserWithEmailAndPasswrod()
@@ -154,6 +160,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
 
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
+    {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        permissionManager.onRequestPermissionResult(requestCode, permissions, grantResults);
     }
 }
 

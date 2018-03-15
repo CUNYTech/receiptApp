@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.util.Log;
@@ -42,12 +43,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Cursor mCursor;                     //hold the cursor: need for fetching the contact information
     private LinearLayout HomePage;              //hold the layout of the home page
     ArrayAdapter<String> adapter ;              //hold the container of the contact
+    private PermissionManager permissionManager;//hold the manager to request permission if the user doesn't have it
 
 
     ArrayList<String> listcontact = new ArrayList<>();   //An arraylist that will hold the contact that was fecth from the phone
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -66,13 +69,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        fab.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
             }
         });
-
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -82,6 +86,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        permissionManager = new PermissionManager(this);
+
+        if (!permissionManager.hasReadContactPermission())
+        {
+            permissionManager.tryAskingPermission();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
+    {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        permissionManager.onRequestPermissionResult(requestCode, permissions, grantResults);
     }
 
     //StartLoginPage() method launch the login page when the app is fire up
@@ -192,30 +211,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //The method getContactInfo() fetch all the contact and display it on the screen
     private void getContactInfo()
     {
-        String name;
-        String phonenumber;
-        mCursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
+        permissionManager.tryAskingPermission();
 
-        while (mCursor.moveToNext())
+        if(permissionManager.hasReadContactPermission())
         {
-            name = mCursor.getString(mCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
-            phonenumber = mCursor.getString(mCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+            String name;
+            String phonenumber;
+            mCursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
 
-            String contact = name + " " + phonenumber;
-            listcontact.add(contact);
+            while (mCursor.moveToNext())
+            {
+                name = mCursor.getString(mCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
+                phonenumber = mCursor.getString(mCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+
+                String contact = name + " " + phonenumber;
+                listcontact.add(contact);
 
 
+                Log.d("CunyCodes", contact);
+            }
+            mCursor.close();
 
-            Log.d("CunyCodes", contact);
+
+            adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listcontact);
+
+            mListView.setAdapter(adapter);
         }
-        mCursor.close();
-
-
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listcontact);
-
-        mListView.setAdapter(adapter);
-
-
     }
     //----------------------------------------------------------------------- END CREATE THE USER
 
