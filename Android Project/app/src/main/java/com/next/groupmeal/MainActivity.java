@@ -131,6 +131,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
         permissionManager = new PermissionManager(this);
+
+        startService(new Intent(this, ListenerService.class));
     }
 
 	@SuppressLint({"MissingPermission", "HardwareIds"})
