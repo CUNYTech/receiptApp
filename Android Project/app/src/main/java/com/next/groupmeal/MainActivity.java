@@ -1,5 +1,6 @@
 package com.next.groupmeal;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -7,9 +8,13 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.telephony.TelephonyManager;
 import android.util.Log;
+import android.util.Pair;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -19,6 +24,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -28,8 +34,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -42,11 +52,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ListView mListView;                 //hold the list where the contact and phone number will be displayed
     private Cursor mCursor;                     //hold the cursor: need for fetching the contact information
     private LinearLayout HomePage;              //hold the layout of the home page
-    ArrayAdapter<String> adapter ;              //hold the container of the contact
+    ArrayAdapter<Pair<String, String>> adapter ;              //hold the container of the contact
     private PermissionManager permissionManager;//hold the manager to request permission if the user doesn't have it
 
 
-    ArrayList<String> listcontact = new ArrayList<>();   //An arraylist that will hold the contact that was fecth from the phone
+    ArrayList<Pair<String, String>> listcontact = new ArrayList<>();   //An arraylist that will hold the contact that was fecth from the phone
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -65,6 +75,39 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mListView = (ListView) findViewById(R.id.list_contact);
         HomePage = (LinearLayout) findViewById(R.id.home_page);
 
+		adapter = new ArrayAdapter<Pair<String, String>>(this, 0)
+		{
+			@NonNull
+			@Override
+			public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent)
+			{
+				final Pair<String, String> contact = getItem(position);
+
+				if(convertView == null)
+				{
+					LayoutInflater lf = LayoutInflater.from(MainActivity.this);
+					convertView = lf.inflate(R.layout.number_list_item, parent, false);
+				}
+
+				TextView titleView = convertView.findViewById(R.id.nliTitleView);
+				titleView.setText(contact.first);
+
+				TextView textView = convertView.findViewById(R.id.nliTextView);
+				textView.setText(contact.second);
+
+				convertView.setOnClickListener(new View.OnClickListener()
+				{
+					@Override
+					public void onClick(View v)
+					{
+						sendMessageTo(contact.second);
+					}
+				});
+				return convertView;
+			}
+		};
+		mListView.setAdapter(adapter);
+
         StartLoginPage();           //When the user launch the app, it should prompt him/her to login with email and password
 
 
@@ -74,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View view)
             {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).show();
             }
         });
 
@@ -88,14 +131,37 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
         permissionManager = new PermissionManager(this);
-
-        if (!permissionManager.hasReadContactPermission())
-        {
-            permissionManager.tryAskingPermission();
-        }
     }
 
-    @Override
+	@SuppressLint({"MissingPermission", "HardwareIds"})
+	private void sendMessageTo(String second)
+	{
+		StringBuilder number = new StringBuilder();
+		for(int i = 0; i < second.length(); i++)
+		{
+			char c = second.charAt(i);
+			if(Character.isDigit(c))
+			{
+				number.append(c);
+			}
+		}
+		FirebaseDatabase db = FirebaseDatabase.getInstance();
+
+		DatabaseReference ref = db.getReference(number.toString());
+		String groupName = groupNameText.getText().toString().trim();
+		String from = "Some person...";
+		if(permissionManager.hasNumberPermission())
+		{
+			TelephonyManager tMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+			if (tMgr != null)
+			{
+				from = tMgr.getLine1Number();
+			}
+		}
+		ref.setValue(new ListenerService.GroupInvite(groupName, from));
+	}
+
+	@Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
     {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -153,40 +219,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 final String groupname = groupNameText.getText().toString().trim();
 
-                //Check if the user did enter the name of the group
-
                 if (groupname.isEmpty())
                 {
                     groupNameText.setError(getString(R.string.error_field_required));
                     groupNameText.requestFocus();
-                    return;
                 }
+                else
+				{
+					groupNameText.setVisibility(View.GONE);
+					hideKeyboard(MainActivity.this);
 
-                if (!groupname.isEmpty())
-                {
-                    //if the groupname field is not empty then the user is can process to the next step to add the member to the group
-
-
-                    addMemberButton.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-
-
-                            groupNameText.setVisibility(View.GONE);
-                            hideKeybaord(MainActivity.this);
-
-                            getContactInfo();
-
-                        }
-                    });
-
-
-
-                }
-
-                //Fetch and display the contact
-
-
+					getContactInfo();
+				}
             }
         });
 
@@ -194,9 +238,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
-    //The hideKeybaord() hide the keybard when the user enter the group's name
+    //The hideKeyboard() hide the keybard when the user enter the group's name
 
-   public static void hideKeybaord(Activity activity)
+   public static void hideKeyboard(Activity activity)
    {
        if (activity != null){
            InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -211,31 +255,38 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //The method getContactInfo() fetch all the contact and display it on the screen
     private void getContactInfo()
     {
-        permissionManager.tryAskingPermission();
-
-        if(permissionManager.hasReadContactPermission())
+        if(permissionManager.hasContactPermission())
         {
             String name;
             String phonenumber;
             mCursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
 
+            listcontact.clear();
             while (mCursor.moveToNext())
             {
                 name = mCursor.getString(mCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
                 phonenumber = mCursor.getString(mCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
 
-                String contact = name + " " + phonenumber;
+				Pair<String, String> contact = new Pair<>(name, phonenumber);
                 listcontact.add(contact);
 
-
-                Log.d("CunyCodes", contact);
+                Log.d("CunyCodes", String.valueOf(contact));
             }
             mCursor.close();
-
-
-            adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listcontact);
-
-            mListView.setAdapter(adapter);
+            Collections.sort(listcontact, new Comparator<Pair<String, String>>()
+			{
+				@Override
+				public int compare(Pair<String, String> o1, Pair<String, String> o2)
+				{
+					return o1.first.compareToIgnoreCase(o2.first);
+				}
+			});
+            adapter.clear();
+            adapter.addAll(listcontact);
+        }
+        else
+        {
+            permissionManager.askContactPermission();
         }
     }
     //----------------------------------------------------------------------- END CREATE THE USER

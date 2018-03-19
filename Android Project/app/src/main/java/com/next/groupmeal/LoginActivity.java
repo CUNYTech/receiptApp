@@ -1,5 +1,7 @@
 package com.next.groupmeal;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.app.LoaderManager.LoaderCallbacks;
@@ -32,7 +34,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     Button loginButton;
     private TextView ErrorTextView;
     private TextView loginTextView;
-    private PermissionManager permissionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,24 +63,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(LoginActivity.this, signup.class);
+                Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
                 startActivity(intent);
             }
         });
-
-
-
-
-
-
-
-
-        permissionManager = new PermissionManager(this);
-
-        if (!permissionManager.hasReadContactPermission())
-        {
-            permissionManager.tryAskingPermission();
-        }
     }
 
     private void LoginUserWithEmailAndPasswrod()
@@ -119,6 +106,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         //if every is correct then perform the authentication
 
+		SharedPreferences pf = getSharedPreferences("fs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = pf.edit();
+        edit.putString("username", email);
+        edit.putString("password", password);
+        edit.apply();
+
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -127,7 +120,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 {
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     startActivity(intent);
-                }else{
+                }
+                else
+                {
                     ErrorTextView.setText(getString(R.string.errortext));
                     Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
                 }
@@ -160,14 +155,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
 
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
-    {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
-        permissionManager.onRequestPermissionResult(requestCode, permissions, grantResults);
     }
 }
 
