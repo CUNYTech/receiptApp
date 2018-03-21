@@ -160,6 +160,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 				from = tMgr.getLine1Number();
 			}
 		}
+		ref = ref.push();
 		ref.setValue(new ListenerService.GroupInvite(groupName, from));
 	}
 

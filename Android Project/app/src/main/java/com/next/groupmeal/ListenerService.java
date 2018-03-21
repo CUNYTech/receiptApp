@@ -2,7 +2,9 @@ package com.next.groupmeal;
 
 import android.annotation.SuppressLint;
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +13,8 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.IBinder;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.Toast;
@@ -40,32 +44,35 @@ public class ListenerService extends Service
 		SharedPreferences pf = getSharedPreferences("fs", Context.MODE_PRIVATE);
 		username = pf.getString("username", null);
 		password = pf.getString("password", null);
-		if (!permissionManager.hasNumberPermission())
+		if (permissionManager.hasNumberPermission())
 		{
-			return;
-		}
-		StringBuilder n = new StringBuilder();
-		TelephonyManager tMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-		if (tMgr != null)
-		{
-			String number = tMgr.getLine1Number();
-			number = number == null ? "" : number;
-
-			for(int i = 0; i < number.length(); i++)
+			StringBuilder n = new StringBuilder();
+			TelephonyManager tMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+			if (tMgr != null)
 			{
-				char c = number.charAt(i);
-				if(Character.isDigit(c))
+				String number = tMgr.getLine1Number();
+				number = number == null ? "" : number;
+
+				for(int i = 0; i < number.length(); i++)
 				{
-					n.append(c);
+					char c = number.charAt(i);
+					if(Character.isDigit(c))
+					{
+						n.append(c);
+					}
 				}
 			}
+			this.number = n.toString();
 		}
-		this.number = n.toString();
-		Log.d("groupmeal", "--------------------------------------------------------------------------------------");
-		Log.d("groupmeal", "--------------------------------------------------------------------------------------");
-		Log.d("groupmeal", "Got Number: \"" + this.number + "\"");
-		Log.d("groupmeal", "--------------------------------------------------------------------------------------");
-		Log.d("groupmeal", "--------------------------------------------------------------------------------------");
+		else
+		{
+			this.number = null;
+		}
+		Log.w("com.next.groupmeal", "--------------------------------------------------------------------------------------");
+		Log.w("com.next.groupmeal", "--------------------------------------------------------------------------------------");
+		Log.w("com.next.groupmeal", "Got Number: \"" + this.number + "\"");
+		Log.w("com.next.groupmeal", "--------------------------------------------------------------------------------------");
+		Log.w("com.next.groupmeal", "--------------------------------------------------------------------------------------");
 	}
 
 	@Override
@@ -73,8 +80,9 @@ public class ListenerService extends Service
 	{
 		Toast.makeText(this, "Started Listening", Toast.LENGTH_SHORT).show();
 
-		if(number != null && !number.isEmpty() && username != null && password != null && !username.isEmpty() && !password.isEmpty())
+		if(number != null && !number.isEmpty())
 		{
+			Log.w("com.next.groupmeal", "Added Listener");
 			DatabaseReference ref = db.getReference(number);
 			ref.addChildEventListener(new ChildEventListener()
 			{
@@ -84,6 +92,9 @@ public class ListenerService extends Service
 					GroupInvite invite = dataSnapshot.getValue(GroupInvite.class);
 					if(invite != null)
 					{
+						Log.w("com.next.groupmeal", "--------------------------------------------------------------------------------------");
+						Log.w("com.next.groupmeal", String.valueOf(invite));
+						Log.w("com.next.groupmeal", "--------------------------------------------------------------------------------------");
 						newMessage(invite);
 					}
 					dataSnapshot.getRef().removeValue();
@@ -108,31 +119,21 @@ public class ListenerService extends Service
 
 	public void newMessage(GroupInvite invite)
 	{
-		final Notification.Builder bd = new Notification.Builder(this);
-		bd.setSmallIcon(android.R.drawable.ic_dialog_info);
-		int dfs = 0;
-		dfs = dfs | Notification.DEFAULT_SOUND;
-		dfs = dfs | Notification.DEFAULT_VIBRATE;
-		bd.setDefaults(dfs);
-		bd.setAutoCancel(true);
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+		NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext(), "notify_001");
+		mBuilder.setSmallIcon(R.mipmap.ic_launcher_round);
+		mBuilder.setContentTitle("New Groupmeal Invite");
+		mBuilder.setContentText("Join " + invite.groupName + "\nFrom " + invite.from);
+		mBuilder.setPriority(Notification.PRIORITY_MAX);
+
+		NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
 		{
-			bd.setColor(0xFFC0E1F3);
+			NotificationChannel channel = new NotificationChannel("notify_001", "Channel human readable title", NotificationManager.IMPORTANCE_DEFAULT);
+			mNotificationManager.createNotificationChannel(channel);
 		}
-		bd.setLights(0xFFC0E1F3, 2000, 2000);
-		bd.setOngoing(false);
-		bd.setContentText("Join " + invite.groupName + "\nFrom " + invite.from);
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH)
-		{
-			bd.setSortKey("com.next.groupmeal");
-		}
-		bd.setContentTitle("New Groupmeal Invite!");
-		Notification n = bd.build();
-		NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-		if (nm != null)
-		{
-			nm.notify(invite.from.hashCode(), n);
-		}
+
+		mNotificationManager.notify(0, mBuilder.build());
 	}
 
 	@Override
@@ -149,8 +150,8 @@ public class ListenerService extends Service
 
 	public static class GroupInvite
 	{
-		private String groupName;
-		private String from;
+		public String groupName;
+		public String from;
 
 		public GroupInvite()
 		{
@@ -161,6 +162,12 @@ public class ListenerService extends Service
 		{
 			this.groupName = groupName;
 			this.from = from;
+		}
+
+		@Override
+		public String toString()
+		{
+			return groupName + "[" + from + "]";
 		}
 	}
 }
