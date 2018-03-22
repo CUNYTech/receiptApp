@@ -23,6 +23,13 @@
            android:layout_height="wrap_content"
            android:src="@drawable/user"
            android:contentDescription="@string/profile"/>
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:text="nav_head_main.xml"
+           android:textSize="60sp" />
+
    </LinearLayout>
 
 

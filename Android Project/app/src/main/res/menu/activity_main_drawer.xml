@@ -20,9 +20,9 @@
             android:icon="@drawable/ic_group_add_black_24dp"
             android:title="@string/joingroup"/>
         <item
-            android:id="@+id/activity"
+            android:id="@+id/receipt"
             android:icon="@drawable/ic_trending_up_black_24dp"
-            android:title="@string/acitvity" />
+            android:title="Receipt" />
         <item
             android:id="@+id/help"
             android:icon="@drawable/ic_help_black_24dp"

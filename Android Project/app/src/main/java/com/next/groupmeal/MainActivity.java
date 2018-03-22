@@ -4,7 +4,9 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
@@ -54,9 +56,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private LinearLayout HomePage;              //hold the layout of the home page
     ArrayAdapter<Pair<String, String>> adapter ;              //hold the container of the contact
     private PermissionManager permissionManager;//hold the manager to request permission if the user doesn't have it
-
+    public static final int CAMERA_PREMISSION = 100;
 
     ArrayList<Pair<String, String>> listcontact = new ArrayList<>();   //An arraylist that will hold the contact that was fecth from the phone
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -117,9 +121,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View view)
             {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).show();
+
+                //request permission if not enabled
+                if(Build.VERSION.SDK_INT > Build.VERSION_CODES.M && checkSelfPermission(android.Manifest.permission.CAMERA)
+                        != PackageManager.PERMISSION_GRANTED){
+                    requestPermissions(new String[] {android.Manifest.permission.CAMERA}, CAMERA_PREMISSION);
+                }else {
+
+                    Intent intent = new Intent(MainActivity.this, ReceiptActivity.class);
+                    startActivity(intent);
+
+                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).show();
+
+                }
+
             }
         });
+
+
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -135,7 +154,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startService(new Intent(this, ListenerService.class));
     }
 
-	@SuppressLint({"MissingPermission", "HardwareIds"})
+
+
+
+    @SuppressLint({"MissingPermission", "HardwareIds"})
 	private void sendMessageTo(String second)
 	{
 		StringBuilder number = new StringBuilder();
@@ -337,9 +359,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             CreateGroup();
         } else if (id == R.id.join_group) {
 
-        } else if (id == R.id.activity) {
+        } else if (id == R.id.receipt) {
+            Intent intent = new Intent(MainActivity.this, SignupActivity.class);
+            startActivity(intent);
+
 
         } else if (id == R.id.help) {
+            Intent intent = new Intent(MainActivity.this, SignupActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.setting) {
 
