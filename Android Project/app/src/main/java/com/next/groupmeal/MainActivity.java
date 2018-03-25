@@ -138,6 +138,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+        FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fab2);
+        fab2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+
+
+                    Intent intent = new Intent(MainActivity.this, Receipt2Activity.class);
+                    startActivity(intent);
+
+            }
+        });
 
 
 

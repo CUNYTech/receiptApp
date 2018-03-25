@@ -31,11 +31,21 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="app_bar_main.xml"
         android:textSize="10sp"
         />
+
 
 </android.support.design.widget.CoordinatorLayout>
