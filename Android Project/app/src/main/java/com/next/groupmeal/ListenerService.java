@@ -27,6 +27,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.MutableData;
 import com.google.firebase.database.Transaction;
 
+import java.security.acl.Group;
+
 public class ListenerService extends Service
 {
 	private FirebaseDatabase db;
@@ -68,11 +70,6 @@ public class ListenerService extends Service
 		{
 			this.number = null;
 		}
-		Log.w("com.next.groupmeal", "--------------------------------------------------------------------------------------");
-		Log.w("com.next.groupmeal", "--------------------------------------------------------------------------------------");
-		Log.w("com.next.groupmeal", "Got Number: \"" + this.number + "\"");
-		Log.w("com.next.groupmeal", "--------------------------------------------------------------------------------------");
-		Log.w("com.next.groupmeal", "--------------------------------------------------------------------------------------");
 	}
 
 	@Override
@@ -89,13 +86,30 @@ public class ListenerService extends Service
 				@Override
 				public void onChildAdded(DataSnapshot dataSnapshot, String s)
 				{
-					GroupInvite invite = dataSnapshot.getValue(GroupInvite.class);
+					final GroupInvite invite = dataSnapshot.getValue(GroupInvite.class);
 					if(invite != null)
 					{
-						Log.w("com.next.groupmeal", "--------------------------------------------------------------------------------------");
-						Log.w("com.next.groupmeal", String.valueOf(invite));
-						Log.w("com.next.groupmeal", "--------------------------------------------------------------------------------------");
-						newMessage(invite);
+						FirebaseDatabase db = FirebaseDatabase.getInstance();
+						DatabaseReference ref = db.getReference("groups").child(invite.groupID);
+						ref.runTransaction(new Transaction.Handler()
+						{
+							@Override
+							public Transaction.Result doTransaction(MutableData mutableData)
+							{
+								GroupWrap group = mutableData.getValue(GroupWrap.class);
+								if(group != null)
+								{
+									newMessage(group, invite.from);
+								}
+								return Transaction.success(mutableData);
+							}
+
+							@Override
+							public void onComplete(DatabaseError databaseError, boolean b, DataSnapshot dataSnapshot)
+							{
+
+							}
+						});
 					}
 					dataSnapshot.getRef().removeValue();
 				}
@@ -117,23 +131,22 @@ public class ListenerService extends Service
 		return START_STICKY;
 	}
 
-	public void newMessage(GroupInvite invite)
+	public void newMessage(GroupWrap group, String from)
 	{
-		NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext(), "notify_001");
-		mBuilder.setSmallIcon(R.mipmap.ic_launcher_round);
+		NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext(), "groupmealnotify");
+		mBuilder.setSmallIcon(R.mipmap.ic_launcher);
 		mBuilder.setContentTitle("New Groupmeal Invite");
-		mBuilder.setContentText("Join " + invite.groupName + "\nFrom " + invite.from);
-		mBuilder.setPriority(Notification.PRIORITY_MAX);
+		mBuilder.setContentText("Join " + group.groupName + "\nFrom " + from);
 
 		NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
 		{
-			NotificationChannel channel = new NotificationChannel("notify_001", "Channel human readable title", NotificationManager.IMPORTANCE_DEFAULT);
+			NotificationChannel channel = new NotificationChannel("groupmealnotify", "Groupmeal Notification Channel", NotificationManager.IMPORTANCE_DEFAULT);
 			mNotificationManager.createNotificationChannel(channel);
 		}
 
-		mNotificationManager.notify(0, mBuilder.build());
+		mNotificationManager.notify("com.next.groupmeal".hashCode(), mBuilder.build());
 	}
 
 	@Override
@@ -150,24 +163,21 @@ public class ListenerService extends Service
 
 	public static class GroupInvite
 	{
-		public String groupName;
+		public String groupID;
 		public String from;
 
-		public GroupInvite()
-		{
-			groupName = from = null;
-		}
+		public GroupInvite() {}
 
-		public GroupInvite(String groupName, String from)
+		public GroupInvite(String groupID, String from)
 		{
-			this.groupName = groupName;
+			this.groupID = groupID;
 			this.from = from;
 		}
 
 		@Override
 		public String toString()
 		{
-			return groupName + "[" + from + "]";
+			return groupID + "[" + from + "]";
 		}
 	}
 }
