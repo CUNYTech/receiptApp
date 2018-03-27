@@ -5,6 +5,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -127,8 +128,9 @@ public class ReceiptActivity extends AppCompatActivity {
                                 mStringBuilder.append(item.getValue());
                                 mStringBuilder.append("\n");
                             }//for
-
-                            mTextView.setText(mStringBuilder.toString());
+                            String row = mStringBuilder.toString();
+                            Log.i("rece info" ,row );
+                            mTextView.setText(row);
 
                         }
                     });//post method for textview

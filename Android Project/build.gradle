@@ -8,9 +8,15 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
-        
 
-        // NOTE: Do not place your application dependencies here; they belong
+//        compile 'com.firebaseui:firebase-ui-auth:3.2.2'
+//
+//        // Required only if Facebook login support is required
+//        compile('com.facebook.android:facebook-android-sdk:4.27.0')
+//
+//        // Required only if Twitter login support is required
+//        compile("com.twitter.sdk.android:twitter-core:3.0.0@aar")
+//        // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
         classpath 'com.google.gms:google-services:3.1.0'
     }

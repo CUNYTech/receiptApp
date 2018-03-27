@@ -45,7 +45,8 @@
         android:layout_height="match_parent"
         android:text="app_bar_main.xml"
         android:textSize="10sp"
-        />
+        app:layout_anchor="@+id/fab2"
+        app:layout_anchorGravity="left|center" />
 
 
 </android.support.design.widget.CoordinatorLayout>
