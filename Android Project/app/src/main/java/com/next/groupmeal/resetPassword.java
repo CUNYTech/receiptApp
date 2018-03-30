@@ -56,7 +56,7 @@ public class resetPassword extends AppCompatActivity {
                             startActivity(intent);
                         }
                         else{
-                            Toast.makeText(getApplicationContext(), "Fail to send email", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Failed to send email", Toast.LENGTH_LONG).show();
                         }
                     }
                 });
