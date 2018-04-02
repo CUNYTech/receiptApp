@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 
-public class signup extends AppCompatActivity {
+public class SignupActivity extends AppCompatActivity {
 
     //Declare the variable
     private TextView mLoginTextView;
@@ -27,7 +27,6 @@ public class signup extends AppCompatActivity {
     private Button mSignupButton;
     FirebaseAuth mAuth;
     private TextView ErrorTextView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +46,7 @@ public class signup extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(signup.this, LoginActivity.class);
+                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
@@ -59,7 +58,6 @@ public class signup extends AppCompatActivity {
                 SignUpUserWithEmailAndPassword();
             }
         });
-
     }
 
     private void SignUpUserWithEmailAndPassword()
@@ -104,7 +102,7 @@ public class signup extends AppCompatActivity {
                 {
                     Toast.makeText(getApplicationContext(), "Successffully Sign up", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(signup.this, LoginActivity.class);
+                    Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
                     startActivity(intent);
 
                     //Will be using this later
@@ -133,5 +131,4 @@ public class signup extends AppCompatActivity {
     {
         return password.length() >= 6;
     }
-
 }
