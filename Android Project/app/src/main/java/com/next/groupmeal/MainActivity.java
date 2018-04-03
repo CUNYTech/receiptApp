@@ -34,8 +34,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -44,7 +47,7 @@ import java.util.Comparator;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     //Declare all the variable
-
+    private  FirebaseAuth mAuth;
     private LinearLayout createGroupLayout;     //hold the layout of create group
     private Button addMemberButton;             //hold the addMember button
     private EditText groupNameText;             //hold the group name
@@ -66,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        mAuth = FirebaseAuth.getInstance();
         //References all the variable to GUI
 
         createGroupLayout = (LinearLayout) findViewById(R.id.creategroupAction);
@@ -186,9 +190,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onStart();
 
         //StartLoginPage();
-
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        //updateUI(currentUser);
 
     }
+
+
 
     @Override
     public void onBackPressed() {

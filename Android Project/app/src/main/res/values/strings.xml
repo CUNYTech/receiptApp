@@ -42,6 +42,10 @@
     <string name="signuptextview">Don\'t have an account? Sign Up</string>
     <string name="errortext">The email and/or password is incorrect</string>
 
+    <string name="facebook_app_id">1807836999256140</string>
+    <string name="fb_login_protocol_scheme">fb1807836999256140</string>
+
+
     <!--Sign Up Page-->
 
     <string name="logintoaccount">Have an account? Login!</string>
