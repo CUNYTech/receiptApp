@@ -22,12 +22,15 @@ import com.next.groupmeal.ui.camera.GraphicOverlay;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.text.TextBlock;
 
+import java.util.ArrayList;
+
 /**
  * A very simple Processor which gets detected TextBlocks and adds them to the overlay
  * as OcrGraphics.
  */
 public class OcrDetectorProcessor implements Detector.Processor<TextBlock> {
 
+    static ArrayList<ArrayList<String>> receipts = new ArrayList<ArrayList<String>>();
     private GraphicOverlay<OcrGraphic> mGraphicOverlay;
 
     OcrDetectorProcessor(GraphicOverlay<OcrGraphic> ocrGraphicOverlay) {
@@ -43,16 +46,23 @@ public class OcrDetectorProcessor implements Detector.Processor<TextBlock> {
      */
     @Override
     public void receiveDetections(Detector.Detections<TextBlock> detections) {
+
+        ArrayList<String> receipt = new ArrayList<String>();
         mGraphicOverlay.clear();
         SparseArray<TextBlock> items = detections.getDetectedItems();
         for (int i = 0; i < items.size(); ++i) {
             TextBlock item = items.valueAt(i);
             if (item != null && item.getValue() != null) {
+
+                //qw: add to new receipt
+                receipt.add(item.getValue());
                 Log.d("OcrDetectorProcessor", "Text detected! " + item.getValue());
             }
             OcrGraphic graphic = new OcrGraphic(mGraphicOverlay, item);
             mGraphicOverlay.add(graphic);
         }
+        //qw: add receipt to the receipts arylst
+        receipts.add(receipt);
     }
 
     /**

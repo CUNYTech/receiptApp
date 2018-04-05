@@ -37,6 +37,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -48,6 +49,8 @@ import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Locale;
 
 /**
@@ -56,6 +59,16 @@ import java.util.Locale;
  * size, and contents of each TextBlock.
  */
 public final class OcrCaptureActivity extends AppCompatActivity {
+
+    /*
+    qw
+     */
+    Button btnResume;
+    Button btnPause;
+    Button btnStop;
+
+
+
     private static final String TAG = "OcrCaptureActivity";
 
     // Intent request code to handle updating play services if needed.
@@ -90,6 +103,36 @@ public final class OcrCaptureActivity extends AppCompatActivity {
 
         mPreview = (CameraSourcePreview) findViewById(R.id.preview);
         mGraphicOverlay = (GraphicOverlay<OcrGraphic>) findViewById(R.id.graphicOverlay);
+
+        /*
+        qw: assign the buttons
+         */
+        btnPause = findViewById(R.id.btn_pause);
+        btnResume=findViewById(R.id.btn_resume);
+        btnStop = findViewById(R.id.btn_done);
+
+        btnPause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onPause();
+            }
+        });
+
+        btnResume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onResume();
+            }
+        });
+
+        btnStop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(OcrCaptureActivity.this , ReceiptMainActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         // Set good defaults for capturing text.
         boolean autoFocus = true;

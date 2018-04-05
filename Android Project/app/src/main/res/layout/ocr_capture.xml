@@ -27,16 +27,19 @@
         android:orientation="horizontal"
         android:layout_weight="0">
         <Button
+            android:id="@+id/btn_resume"
             android:text="resume"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
         <Button
+            android:id="@+id/btn_pause"
             android:text="pause"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
         <Button
+            android:id="@+id/btn_done"
             android:text="done"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

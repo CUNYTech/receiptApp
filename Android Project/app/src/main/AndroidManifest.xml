@@ -40,6 +40,7 @@
             android:label="@string/title_activity_login" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".OcrCaptureActivity" />
+        <activity android:name=".ReceiptMainActivity" />
 
         <service
             android:name=".ListenerService"
