@@ -11,7 +11,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
-
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
@@ -41,11 +40,12 @@
         <activity android:name=".SignupActivity" />
         <activity android:name=".OcrCaptureActivity" />
         <activity android:name=".ReceiptMainActivity" />
-
+      
         <service
             android:name=".ListenerService"
             android:enabled="true"
             android:exported="true"></service>
+        <activity android:name=".resetPassword"></activity>
     </application>
 
 </manifest>
