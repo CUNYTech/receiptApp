@@ -34,46 +34,53 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.MutableData;
+import com.google.firebase.database.Transaction;
 
+import java.security.acl.Group;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
+{
 
-    //Declare all the variable
+	//Declare all the variable
 
-    private LinearLayout createGroupLayout;     //hold the layout of create group
-    private Button addMemberButton;             //hold the addMember button
-    private EditText groupNameText;             //hold the group name
-    private TextView nameGroup;                 //hold the group name to be display in form of textView
-    private ListView mListView;                 //hold the list where the contact and phone number will be displayed
-    private Cursor mCursor;                     //hold the cursor: need for fetching the contact information
-    private LinearLayout HomePage;              //hold the layout of the home page
-    ArrayAdapter<Pair<String, String>> adapter ;              //hold the container of the contact
-    private PermissionManager permissionManager;//hold the manager to request permission if the user doesn't have it
+	private LinearLayout createGroupLayout;     //hold the layout of create group
+	private Button addMemberButton;             //hold the addMember button
+	private EditText groupNameText;             //hold the group name
+	private TextView nameGroup;                 //hold the group name to be display in form of textView
+	private ListView mListView;                 //hold the list where the contact and phone number will be displayed
+	private Cursor mCursor;                     //hold the cursor: need for fetching the contact information
+	private LinearLayout HomePage;              //hold the layout of the home page
+	ArrayAdapter<Pair<String, String>> adapter;//hold the container of the contact
+	private GroupWrap currentGroup;                //hold the current group the user created
+	private PermissionManager permissionManager;//hold the manager to request permission if the user doesn't have it
 
 
-    ArrayList<Pair<String, String>> listcontact = new ArrayList<>();   //An arraylist that will hold the contact that was fecth from the phone
+	ArrayList<Pair<String, String>> listcontact = new ArrayList<>();   //An arraylist that will hold the contact that was fecth from the phone
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+	@Override
+	protected void onCreate(Bundle savedInstanceState)
+	{
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+		setSupportActionBar(toolbar);
 
-        //References all the variable to GUI
+		//References all the variable to GUI
 
-        createGroupLayout = (LinearLayout) findViewById(R.id.creategroupAction);
-        addMemberButton = (Button) findViewById(R.id.add_member_button);
-        groupNameText = (EditText) findViewById(R.id.groupname);
-        nameGroup = (TextView) findViewById(R.id.nameGroup);
-        mListView = (ListView) findViewById(R.id.list_contact);
-        HomePage = (LinearLayout) findViewById(R.id.home_page);
+		createGroupLayout = (LinearLayout) findViewById(R.id.creategroupAction);
+		addMemberButton = (Button) findViewById(R.id.add_member_button);
+		groupNameText = (EditText) findViewById(R.id.groupname);
+		nameGroup = (TextView) findViewById(R.id.nameGroup);
+		mListView = (ListView) findViewById(R.id.list_contact);
+		HomePage = (LinearLayout) findViewById(R.id.home_page);
 
 		adapter = new ArrayAdapter<Pair<String, String>>(this, 0)
 		{
@@ -83,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 			{
 				final Pair<String, String> contact = getItem(position);
 
-				if(convertView == null)
+				if (convertView == null)
 				{
 					LayoutInflater lf = LayoutInflater.from(MainActivity.this);
 					convertView = lf.inflate(R.layout.number_list_item, parent, false);
@@ -108,175 +115,157 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 		};
 		mListView.setAdapter(adapter);
 
-        StartLoginPage();           //When the user launch the app, it should prompt him/her to login with email and password
+		StartLoginPage();           //When the user launch the app, it should prompt him/her to login with email and password
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).show();
-            }
-        });
+		FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+		fab.setOnClickListener(new View.OnClickListener()
+		{
+			@Override
+			public void onClick(View view)
+			{
+				Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).show();
+			}
+		});
 
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
+		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+		ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+		drawer.addDrawerListener(toggle);
+		toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+		NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+		navigationView.setNavigationItemSelectedListener(this);
 
-        permissionManager = new PermissionManager(this);
+		permissionManager = new PermissionManager(this);
 
-        startService(new Intent(this, ListenerService.class));
-    }
+		startService(new Intent(this, ListenerService.class));
+	}
 
 	@SuppressLint({"MissingPermission", "HardwareIds"})
 	private void sendMessageTo(String second)
 	{
-		StringBuilder number = new StringBuilder();
-		for(int i = 0; i < second.length(); i++)
-		{
-			char c = second.charAt(i);
-			if(Character.isDigit(c))
-			{
-				number.append(c);
-			}
-		}
 		FirebaseDatabase db = FirebaseDatabase.getInstance();
 
-		DatabaseReference ref = db.getReference(number.toString());
-		String groupName = groupNameText.getText().toString().trim();
-		String from = "Some person...";
-		if(permissionManager.hasNumberPermission())
-		{
-			TelephonyManager tMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-			if (tMgr != null)
-			{
-				from = tMgr.getLine1Number();
-			}
-		}
+		DatabaseReference ref = db.getReference(properNum(second));
+
 		ref = ref.push();
-		ref.setValue(new ListenerService.GroupInvite(groupName, from));
+		ref.setValue(new ListenerService.GroupInvite(currentGroup.groupID, getNumber("Some number...")));
 	}
 
 	@Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
-    {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
+	{
+		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        permissionManager.onRequestPermissionResult(requestCode, permissions, grantResults);
-    }
+		permissionManager.onRequestPermissionResult(requestCode, permissions, grantResults);
+	}
 
-    //StartLoginPage() method launch the login page when the app is fire up
-    private void StartLoginPage()
-    {
-        Intent intent = new Intent(this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        startActivity(intent);
-
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        //StartLoginPage();
+	//StartLoginPage() method launch the login page when the app is fire up
+	private void StartLoginPage()
+	{
+		Intent intent = new Intent(this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+		startActivity(intent);
 
 
-    }
+	}
 
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
+	@Override
+	protected void onStart()
+	{
+		super.onStart();
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
+		//StartLoginPage();
+
+
+	}
+
+	@Override
+	public void onBackPressed()
+	{
+		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+		if (drawer.isDrawerOpen(GravityCompat.START))
+		{
+			drawer.closeDrawer(GravityCompat.START);
+		} else
+		{
+			super.onBackPressed();
+		}
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu)
+	{
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
 //--------------------------------------------------------------- CREATE GROUP
-    //CreateGroup() method perform all the action that allow the user to create the group
+	//CreateGroup() method perform all the action that allow the user to create the group
 
-    private void CreateGroup()
-    {
+	private void CreateGroup()
+	{
 
-        createGroupLayout.setVisibility(View.VISIBLE);
+		createGroupLayout.setVisibility(View.VISIBLE);
 
-        //if addMemberButton is pressedt
+		//if addMemberButton is pressedt
 
-        addMemberButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+		addMemberButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				final String groupname = groupNameText.getText().toString().trim();
 
-                final String groupname = groupNameText.getText().toString().trim();
-
-                if (groupname.isEmpty())
-                {
-                    groupNameText.setError(getString(R.string.error_field_required));
-                    groupNameText.requestFocus();
-                }
-                else
-				{
+				if (groupname.isEmpty()) {
+					groupNameText.setError(getString(R.string.error_field_required));
+					groupNameText.requestFocus();
+				} else {
 					groupNameText.setVisibility(View.GONE);
 					hideKeyboard(MainActivity.this);
+					final FirebaseDatabase db = FirebaseDatabase.getInstance();
 
+					DatabaseReference ref = db.getReference("groups").push();
+					GroupWrap group = new GroupWrap(ref.getKey(), getNumber("Some Number..."), groupname);
+					ref.setValue(group);
+					currentGroup = group;
 					getContactInfo();
 				}
-            }
-        });
+			}
+		});
+	}
 
+	//The hideKeyboard() hide the keybard when the user enter the group's name
 
+	public static void hideKeyboard(Activity activity) {
+		if (activity != null) {
+			InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
 
-    }
+			if (activity.getCurrentFocus() != null && inputMethodManager != null) {
+				inputMethodManager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
+				inputMethodManager.hideSoftInputFromInputMethod(activity.getCurrentFocus().getWindowToken(), 0);
+			}
+		}
+	}
 
-    //The hideKeyboard() hide the keybard when the user enter the group's name
+	//The method getContactInfo() fetch all the contact and display it on the screen
+	private void getContactInfo()
+	{
+		if (permissionManager.hasContactPermission())
+		{
+			String name;
+			String phonenumber;
+			mCursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
 
-   public static void hideKeyboard(Activity activity)
-   {
-       if (activity != null){
-           InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
-
-           if (activity.getCurrentFocus() != null && inputMethodManager != null){
-               inputMethodManager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(),0);
-               inputMethodManager.hideSoftInputFromInputMethod(activity.getCurrentFocus().getWindowToken(), 0);
-           }
-       }
-   }
-
-    //The method getContactInfo() fetch all the contact and display it on the screen
-    private void getContactInfo()
-    {
-        if(permissionManager.hasContactPermission())
-        {
-            String name;
-            String phonenumber;
-            mCursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
-
-            listcontact.clear();
-            while (mCursor.moveToNext())
-            {
-                name = mCursor.getString(mCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
-                phonenumber = mCursor.getString(mCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+			listcontact.clear();
+			while (mCursor.moveToNext())
+			{
+				name = mCursor.getString(mCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
+				phonenumber = mCursor.getString(mCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
 
 				Pair<String, String> contact = new Pair<>(name, phonenumber);
-                listcontact.add(contact);
-
-                Log.d("CunyCodes", String.valueOf(contact));
-            }
-            mCursor.close();
-            Collections.sort(listcontact, new Comparator<Pair<String, String>>()
+				listcontact.add(contact);
+			}
+			mCursor.close();
+			Collections.sort(listcontact, new Comparator<Pair<String, String>>()
 			{
 				@Override
 				public int compare(Pair<String, String> o1, Pair<String, String> o2)
@@ -284,47 +273,68 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 					return o1.first.compareToIgnoreCase(o2.first);
 				}
 			});
-            adapter.clear();
-            adapter.addAll(listcontact);
-        }
-        else
-        {
-            permissionManager.askContactPermission();
-        }
-    }
-    //----------------------------------------------------------------------- END CREATE THE USER
+			adapter.clear();
+			adapter.addAll(listcontact);
+		} else
+		{
+			permissionManager.askContactPermission();
+		}
+	}
+	//----------------------------------------------------------------------- END CREATE THE USER
 
-    //----------------------------------------------------------------------LOG OUT THE USER ACTION
-    private void LogOutUser()
-    {
-        FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-        startActivity(intent);
-    }
-    //-------------------------------------------------------------------------END LOG OUT USER
+	//----------------------------------------------------------------------LOG OUT THE USER ACTION
+	private void LogOutUser()
+	{
+		FirebaseAuth.getInstance().signOut();
+		finish();
+		Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+		startActivity(intent);
+	}
+	//-------------------------------------------------------------------------END LOG OUT USER
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+		//noinspection SimplifiableIfStatement
+		if (id == R.id.action_settings)
+		{
+			return true;
+		}
 
-        return super.onOptionsItemSelected(item);
-    }
+		return super.onOptionsItemSelected(item);
+	}
+
+	public String getNumber(String def)
+	{
+		String n = getNumber();
+		return n == null ? def : n;
+	}
+
+	@SuppressLint({"MissingPermission", "HardwareIds"})
+	@Nullable
+	public String getNumber()
+	{
+		String from = null;
+		if (permissionManager.hasNumberPermission())
+		{
+			TelephonyManager tMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+			if (tMgr != null) from = tMgr.getLine1Number();
+		}
+		return from;
+	}
+
+	public String properNum(String number)
+	{
+		return number.replaceAll("[^\\d.]", "");
+	}
 
     //-----------------------------------------------------------------------------------WELCOME PAGE CONTENT
-    private void WelcomePageContent()
-    {
-
-
-
-    }
+    private void WelcomePageContent() {}
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
