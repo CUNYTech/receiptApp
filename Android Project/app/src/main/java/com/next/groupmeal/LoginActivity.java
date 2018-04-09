@@ -28,25 +28,26 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     //Reference the UI
 
-    FirebaseAuth mAuth;
+    private  FirebaseAuth mAuth;
     private EditText mEmail;
     private EditText mPassword;
     Button loginButton;
     private TextView ErrorTextView;
     private TextView loginTextView;
+    private TextView resetTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mAuth = FirebaseAuth.getInstance();
-
         mEmail = (EditText) findViewById(R.id.email);
         mPassword = (EditText) findViewById(R.id.password);
         loginButton = (Button) findViewById(R.id.loginbuton);
         ErrorTextView = (TextView) findViewById(R.id.errotext);
         loginTextView = (TextView) findViewById(R.id.signupTextView);
+        resetTextView = (TextView) findViewById(R.id.resetPasswordTextView);
+
 
 
         //LoginUserWithEmailAndPasswrod() method perform the login authentication
@@ -65,8 +66,22 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
                 Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
                 startActivity(intent);
+
+
             }
         });
+
+        //Reset password
+        resetTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(LoginActivity.this, resetPassword.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     private void LoginUserWithEmailAndPasswrod()
@@ -97,6 +112,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             return;
         }
 
+
+
         if (password.isEmpty())
         {
             mPassword.setError(getString(R.string.error_field_required));
@@ -112,6 +129,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         edit.putString("password", password);
         edit.apply();
 
+
+        
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -130,6 +149,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         });
     }
     //isEmailValid() method check if the email is in the valid format
+
+
 
     private boolean isEmailValid(String email)
     {

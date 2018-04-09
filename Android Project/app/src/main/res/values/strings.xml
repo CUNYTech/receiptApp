@@ -42,6 +42,10 @@
     <string name="signuptextview">Don\'t have an account? Sign Up</string>
     <string name="errortext">The email and/or password is incorrect</string>
 
+    <string name="facebook_app_id">1807836999256140</string>
+    <string name="fb_login_protocol_scheme">fb1807836999256140</string>
+
+
     <!--Sign Up Page-->
 
     <string name="logintoaccount">Have an account? Login!</string>
@@ -52,5 +56,21 @@
 
     <string name="groupname">Group\'s Name:</string>
     <string name="addmember">+Add member</string>
+
+    <!--qw-->
+    <string name="ok">OK</string>
+    <string name="permission_camera_rationale">Access to the camera is needed for detection</string>
+    <string name="no_camera_permission">This application cannot run because it does not have the camera permission.  The application will now exit.</string>
+    <string name="low_storage_error">Ocr dependencies cannot be downloaded due to low device storage</string>
+    <string name="title_activity_main">Ocr Detector Sample</string>
+    <string name="ocr_header">Click &quot;Detect Text&quot; to detect text</string>
+    <string name="read_text">Detect Text</string>
+    <string name="auto_focus">Auto Focus</string>
+    <string name="use_flash">Use Flash</string>
+    <string name="ocr_success">Text read successfully</string>
+    <string name="ocr_failure">No text captured</string>
+    <string name="ocr_error">"Error reading text: %1$s"</string>
+
+
 
 </resources>

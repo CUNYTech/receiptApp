@@ -34,6 +34,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -41,7 +42,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.MutableData;
 import com.google.firebase.database.Transaction;
 
-import java.security.acl.Group;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -49,38 +49,37 @@ import java.util.Comparator;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
 
-	//Declare all the variable
-
-	private LinearLayout createGroupLayout;     //hold the layout of create group
-	private Button addMemberButton;             //hold the addMember button
-	private EditText groupNameText;             //hold the group name
-	private TextView nameGroup;                 //hold the group name to be display in form of textView
-	private ListView mListView;                 //hold the list where the contact and phone number will be displayed
-	private Cursor mCursor;                     //hold the cursor: need for fetching the contact information
-	private LinearLayout HomePage;              //hold the layout of the home page
-	ArrayAdapter<Pair<String, String>> adapter;//hold the container of the contact
-	private GroupWrap currentGroup;                //hold the current group the user created
-	private PermissionManager permissionManager;//hold the manager to request permission if the user doesn't have it
-
+    //Declare all the variable
+    private  FirebaseAuth mAuth;
+    private LinearLayout createGroupLayout;     //hold the layout of create group
+    private Button addMemberButton;             //hold the addMember button
+    private EditText groupNameText;             //hold the group name
+    private TextView nameGroup;                 //hold the group name to be display in form of textView
+    private ListView mListView;                 //hold the list where the contact and phone number will be displayed
+    private Cursor mCursor;                     //hold the cursor: need for fetching the contact information
+    private LinearLayout HomePage;              //hold the layout of the home page
+    ArrayAdapter<Pair<String, String>> adapter ;              //hold the container of the contact
+	  private GroupWrap currentGroup;                //hold the current group the user created
+	  private PermissionManager permissionManager;//hold the manager to request permission if the user doesn't have it
 
 	ArrayList<Pair<String, String>> listcontact = new ArrayList<>();   //An arraylist that will hold the contact that was fecth from the phone
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState)
-	{
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-		setSupportActionBar(toolbar);
+        mAuth = FirebaseAuth.getInstance();
+        //References all the variable to GUI
 
-		//References all the variable to GUI
-
-		createGroupLayout = (LinearLayout) findViewById(R.id.creategroupAction);
-		addMemberButton = (Button) findViewById(R.id.add_member_button);
-		groupNameText = (EditText) findViewById(R.id.groupname);
-		nameGroup = (TextView) findViewById(R.id.nameGroup);
-		mListView = (ListView) findViewById(R.id.list_contact);
-		HomePage = (LinearLayout) findViewById(R.id.home_page);
+        createGroupLayout = (LinearLayout) findViewById(R.id.creategroupAction);
+        addMemberButton = (Button) findViewById(R.id.add_member_button);
+        groupNameText = (EditText) findViewById(R.id.groupname);
+        nameGroup = (TextView) findViewById(R.id.nameGroup);
+        mListView = (ListView) findViewById(R.id.list_contact);
+        HomePage = (LinearLayout) findViewById(R.id.home_page);
 
 		adapter = new ArrayAdapter<Pair<String, String>>(this, 0)
 		{
@@ -118,15 +117,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 		StartLoginPage();           //When the user launch the app, it should prompt him/her to login with email and password
 
 
-		FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-		fab.setOnClickListener(new View.OnClickListener()
-		{
-			@Override
-			public void onClick(View view)
-			{
-				Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).show();
-			}
-		});
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+
+                Intent intent = new Intent(MainActivity.this, OcrCaptureActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
 
 		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -174,24 +176,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 	protected void onStart()
 	{
 		super.onStart();
-
-		//StartLoginPage();
-
+        //StartLoginPage();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        //updateUI(currentUser);
 
 	}
 
-	@Override
-	public void onBackPressed()
-	{
-		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-		if (drawer.isDrawerOpen(GravityCompat.START))
-		{
-			drawer.closeDrawer(GravityCompat.START);
-		} else
-		{
-			super.onBackPressed();
-		}
-	}
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu)
