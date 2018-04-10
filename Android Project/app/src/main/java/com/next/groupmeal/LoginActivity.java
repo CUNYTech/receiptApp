@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         loginTextView = (TextView) findViewById(R.id.signupTextView);
         resetTextView = (TextView) findViewById(R.id.resetPasswordTextView);
 
-
+        mAuth = FirebaseAuth.getInstance();
 
         //LoginUserWithEmailAndPasswrod() method perform the login authentication
 
