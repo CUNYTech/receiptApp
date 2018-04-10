@@ -34,6 +34,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     Button loginButton;
     private TextView ErrorTextView;
     private TextView loginTextView;
+    private TextView resetTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +46,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         loginButton = (Button) findViewById(R.id.loginbuton);
         ErrorTextView = (TextView) findViewById(R.id.errotext);
         loginTextView = (TextView) findViewById(R.id.signupTextView);
+        resetTextView = (TextView) findViewById(R.id.resetPasswordTextView);
 
-
+        mAuth = FirebaseAuth.getInstance();
 
         //LoginUserWithEmailAndPasswrod() method perform the login authentication
 
@@ -63,6 +65,18 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             public void onClick(View v) {
 
                 Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
+                startActivity(intent);
+
+
+            }
+        });
+
+        //Reset password
+        resetTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(LoginActivity.this, resetPassword.class);
                 startActivity(intent);
             }
         });
