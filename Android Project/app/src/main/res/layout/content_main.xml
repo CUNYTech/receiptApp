@@ -11,21 +11,18 @@
     <!--WELCOME PAGE CONTENT-->
 
     <LinearLayout
-        android:id="@+id/home_page"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:id="@+id/home_page">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:text="@string/welcome"
             android:layout_margin="@dimen/activity_vertical_margin"
-            android:text="Welcome to GroupMeal"
-            android:textColor="@color/backgound" />
+            android:textColor="@color/backgound"/>
 
     </LinearLayout>
 

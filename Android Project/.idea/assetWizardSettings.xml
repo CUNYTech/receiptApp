@@ -16,9 +16,24 @@
                             <entry key="launcher">
                               <value>
                                 <PersistentState>
+                                  <option name="children">
+                                    <map>
+                                      <entry key="foregroundImage">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="scalingPercent" value="105" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
+                                    </map>
+                                  </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="foregroundImage" value="C:\Users\Franko\Desktop\android-icon-96x96.png" />
+                                      <entry key="foregroundImage" value="C:\Users\Franko\Desktop\69072715-burger-simple-sign-white-icon-on-blue-sign-as-background-.jpg" />
                                     </map>
                                   </option>
                                 </PersistentState>
