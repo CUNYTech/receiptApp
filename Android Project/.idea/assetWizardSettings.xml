@@ -23,7 +23,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="scalingPercent" value="101" />
+                                                <entry key="scalingPercent" value="78" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -33,10 +33,8 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="backgroundLayerName" value="ic_launcher_background" />
-                                      <entry key="foregroundImage" value="C:\Users\Franko\Desktop\69072715-burger-simple-sign-white-icon-on-blue-sign-as-background-.jpg" />
-                                      <entry key="foregroundLayerName" value="ic_launcher" />
-                                      <entry key="outputName" value="ic_launcher_pic" />
+                                      <entry key="foregroundImage" value="C:\Users\Franko\Pictures\group_meal_logo_3.jpg" />
+                                      <entry key="legacyIconShape" value="NONE" />
                                     </map>
                                   </option>
                                 </PersistentState>
