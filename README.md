@@ -1,5 +1,7 @@
-# Group Meal 
+# GroupMeal 
 This is our Android App!
+
+## Our mission is to make having meals in a group east and fun!
 
 ### Members
 Frank Orefice  
