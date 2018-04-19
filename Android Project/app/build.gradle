@@ -30,11 +30,11 @@ dependencies {
     implementation 'com.facebook.android:facebook-login:4.31.0'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    compile 'com.android.support:support-annotations:27.1.0'
+    implementation 'com.android.support:support-annotations:27.1.0'
 //  qw: adding the libraries to use the mobile vision api
-    compile 'com.android.support:support-v4:27.1.0'
-    compile 'com.google.android.gms:play-services-vision:12.0.1'
-    compile 'com.android.support:design:27.1.0'
+    implementation 'com.android.support:support-v4:27.1.0'
+    implementation 'com.google.android.gms:play-services-vision:12.0.1'
+    implementation 'com.android.support:design:27.1.0'
 //  qw
 }
 

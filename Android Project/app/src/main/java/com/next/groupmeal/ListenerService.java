@@ -31,9 +31,21 @@ import java.security.acl.Group;
 
 public class ListenerService extends Service
 {
+	/**
+	 * Hold the database object
+	 */
 	private FirebaseDatabase db;
+	/**
+	 * This is the current phone's number
+	 */
 	private String number;
+	/**
+	 * The user account credentials
+	 */
 	private String username, password;
+	/**
+	 * This is to check if we have the phone number permissions
+	 */
 	private PermissionManager permissionManager;
 
 	@Override
@@ -43,18 +55,27 @@ public class ListenerService extends Service
 		super.onCreate();
 		permissionManager = new PermissionManager(this);
 		db = FirebaseDatabase.getInstance();
+
+		// This is personal save data for an app
+		// Checking if there is a username and password saved on the app
 		SharedPreferences pf = getSharedPreferences("fs", Context.MODE_PRIVATE);
 		username = pf.getString("username", null);
 		password = pf.getString("password", null);
+
+		// Get the phone number
 		if (permissionManager.hasNumberPermission())
 		{
 			StringBuilder n = new StringBuilder();
 			TelephonyManager tMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 			if (tMgr != null)
 			{
+				// Retrieve the number
 				String number = tMgr.getLine1Number();
 				number = number == null ? "" : number;
 
+				// Trim the number down to only digits
+				// So "+1 (718) 555-555" will give us
+				// "1718555555" for the database
 				for(int i = 0; i < number.length(); i++)
 				{
 					char c = number.charAt(i);
@@ -77,28 +98,37 @@ public class ListenerService extends Service
 	{
 		Toast.makeText(this, "Started Listening", Toast.LENGTH_SHORT).show();
 
+
+		// If we have a number
 		if(number != null && !number.isEmpty())
 		{
 			Log.w("com.next.groupmeal", "Added Listener");
+			// Get the database path we want to listen to
 			DatabaseReference ref = db.getReference(number);
+			// If something changes in our database, this will catch that
 			ref.addChildEventListener(new ChildEventListener()
 			{
 				@Override
 				public void onChildAdded(DataSnapshot dataSnapshot, String s)
 				{
+					// Convert the new info added to the DB into a GroupInvite object
 					final GroupInvite invite = dataSnapshot.getValue(GroupInvite.class);
 					if(invite != null)
 					{
-						FirebaseDatabase db = FirebaseDatabase.getInstance();
+						// Retrieve the reference to the group we were invited to using the ID
 						DatabaseReference ref = db.getReference("groups").child(invite.groupID);
 						ref.runTransaction(new Transaction.Handler()
 						{
 							@Override
 							public Transaction.Result doTransaction(MutableData mutableData)
 							{
+								// Convert from the DB to a GroupWrap object
 								GroupWrap group = mutableData.getValue(GroupWrap.class);
 								if(group != null)
 								{
+									// Set the group's id, this isn't read from the database
+									group.groupID = invite.groupID;
+									// Send a notification to the user's phone
 									newMessage(group, invite.from);
 								}
 								return Transaction.success(mutableData);
@@ -111,6 +141,7 @@ public class ListenerService extends Service
 							}
 						});
 					}
+					// Once we get something, we want to remove it
 					dataSnapshot.getRef().removeValue();
 				}
 
@@ -126,26 +157,46 @@ public class ListenerService extends Service
 				@Override
 				public void onCancelled(DatabaseError databaseError) {}
 			});
+			// This tells Android that if our Service is closed or stopped, we want to restart then
+			return START_STICKY;
 		}
-
-		return START_STICKY;
+		else
+		{
+			// This means that we're done, the Service can be discarded once closed or stopped
+			stopSelf();
+			return START_NOT_STICKY;
+		}
 	}
 
 	public void newMessage(GroupWrap group, String from)
 	{
+		// Create a new Notification Builder
 		NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext(), "groupmealnotify");
+
+		// Setting the look of the notification, title, content, icon...
 		mBuilder.setSmallIcon(R.mipmap.ic_launcher);
 		mBuilder.setContentTitle("New Groupmeal Invite");
 		mBuilder.setContentText("Join " + group.groupName + "\nFrom " + from);
+		mBuilder.setAutoCancel(true);
+
+		// Create an Intent with the new activity
+		Intent intent = new Intent(this, InviteActivity.class);
+		intent.putExtra("groupID", group.groupID);
+
+		// Convert the intent to a pending intent so we can pass it to the notification
+		PendingIntent pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+		mBuilder.setContentIntent(pi);
 
 		NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
+		// Saw this in the online docs, too scared to remove it
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
 		{
 			NotificationChannel channel = new NotificationChannel("groupmealnotify", "Groupmeal Notification Channel", NotificationManager.IMPORTANCE_DEFAULT);
 			mNotificationManager.createNotificationChannel(channel);
 		}
 
+		// Build and send the notification to the Android System
 		mNotificationManager.notify("com.next.groupmeal".hashCode(), mBuilder.build());
 	}
 
