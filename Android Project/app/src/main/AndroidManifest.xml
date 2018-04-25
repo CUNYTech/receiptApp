@@ -17,6 +17,9 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_SMS" />
 
+    <permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -40,7 +43,7 @@
         <activity android:name=".SignupActivity" />
         <activity android:name=".OcrCaptureActivity" />
         <activity android:name=".ReceiptMainActivity" />
-      
+
         <service
             android:name=".ListenerService"
             android:enabled="true"
@@ -65,5 +68,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".resetPassword"></activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCeFgARrv5t7uCCGdxc2ZXwHyqf2fmqqdg"/>
   </application>
 </manifest>

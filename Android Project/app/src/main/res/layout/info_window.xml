@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#E2E2E2"
+    android:weightSum="100">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageFor"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="50"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtName"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            android:textColor="#000"
+            android:textSize="25dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:text="Address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtAddress"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            android:textColor="#000"
+            android:textSize="15dp"/>
+        <TextView
+            android:text="Phone:(917)-555-5555"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtPhone"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            android:textColor="#000"
+            android:textSize="15dp"/>
+    </LinearLayout>
+
+
+</LinearLayout>
